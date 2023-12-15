@@ -26,39 +26,51 @@ export default class Utileria {
 		return !this.isEmptyObject(object);
 	}
 
-	static notifications(msj, type) {
-		toast[type.toLowerCase()](msj);
-	}
+	// static notifications(msj, type) {
+	// 	toast[type.toLowerCase()](msj);
+	// }
 
-	static errorhttp(error) {
-		console.log(error);
-		let response = error.response;
-		let status = 0;
-		if (response !== undefined && Number(response.status) !== undefined) {
-			status = response.status;
-		}
+	// static errorhttp(error) {
+	// 	console.log(error);
+	// 	let response = error.response;
+	// 	let status = 0;
+	// 	if (response !== undefined && Number(response.status) !== undefined) {
+	// 		status = response.status;
+	// 	}
 
-		// switch (status) {
-		//     case 401:
-		//         this.notifications("No estás autorizado para ver el recurso solicitado.", "ERROR");
-		//         break;
-		//     case 403:
-		//         this.notifications("No tienes permisos para realizar la tarea.", "WARNING");
-		//         break;
-		//     case 404:
-		//         this.notifications("No se encontró el recurso que solicitó.", "WARNING");
-		//         break;
-		//     case 400:
-		//         let mensaje = response.data.mensaje || "Problemas en el servidor, notifique al administrador";
-		//         if (this.nonEmptyList(response.data.errores)) {
-		//             mensaje += `: ${response.data.errores.map((error) => error).join(",")}`;
-		//         }
-		//         this.notifications(mensaje, "WARNING");
-		//         break;
-		//     default:
-		//         this.notifications("Problemas en el servidor, notifique al administrador.", "ERROR");
-		// }
-	}
+	// 	switch (status) {
+	// 		case 401:
+	// 			this.notifications(
+	// 				'No estás autorizado para ver el recurso solicitado.',
+	// 				'ERROR'
+	// 			);
+	// 			break;
+	// 		case 403:
+	// 			this.notifications(
+	// 				'No tienes permisos para realizar la tarea.',
+	// 				'WARNING'
+	// 			);
+	// 			break;
+	// 		case 404:
+	// 			this.notifications(
+	// 				'No se encontró el recurso que solicitó.',
+	// 				'WARNING'
+	// 			);
+	// 			break;
+	// 		// case 400:
+	// 		//     let mensaje = response.data.mensaje || "Problemas en el servidor, notifique al administrador";
+	// 		//     if (this.nonEmptyList(response.data.errores)) {
+	// 		//         mensaje += `: ${response.data.errores.map((error) => error).join(",")}`;
+	// 		//     }
+	// 		//     this.notifications(mensaje, "WARNING");
+	// 		// //    break;
+	// 		// default:
+	// 		// 	this.notifications(
+	// 		// 		'Problemas en el servidor, notifique al administrador.',
+	// 		// 		'ERROR'
+	// 		// 	);
+	// 	}
+	// }
 
 	static validateDate(date) {
 		return moment(date, this.FORMAT_DATE, true).isValid();
@@ -153,12 +165,12 @@ export default class Utileria {
 		return dataType === 'json' || dataType === 'application/json';
 	}
 
-	static catchError(e) {
-		this.notifications(
-			e || 'Ocurrió un error interno, intente nuevamente',
-			'ERROR'
-		);
-	}
+	// static catchError(e) {
+	// 	this.notifications(
+	// 		e || 'Ocurrió un error interno, intente nuevamente',
+	// 		'ERROR'
+	// 	);
+	// }
 
 	static claseInputForm = (errores, touched) => {
 		if (errores && touched) {
